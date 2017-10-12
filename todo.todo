@@ -1,0 +1,9 @@
+ ☐ Header
+   ☐ Three Spans
+   ☐ SVG Graphic + ViewBox
+   ☐ Flexbox for Mobile?
+ ☐ Content
+   ☐ Two columns (one for times and reg, other for text)
+     Text column has scroll overflow
+   ☐ Media Query for mobile to put rego at top
+     Change flex direction from row to column?

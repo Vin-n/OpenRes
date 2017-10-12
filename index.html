@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script src="https://d3js.org/d3-color.v1.min.js"></script>
+
+
+	<style type="text/css">
+
+		* {
+			/*border: 1px solid red;*/
+		}
+
+    #main {
+
+    }
+
+		#header {
+			width: 100%;
+			height: 12%;
+			background-color: #00779c;
+
+      font-size: 12vh;
+
+      display: flex;
+
+      justify-content: center;
+		}
+
+    #header_text {
+      height: 100%;
+      font-size: 0.8em;
+
+      display: flex;
+      justify-content: center;
+
+    }
+
+    #content {
+
+    }
+
+
+
+
+	</style>
+</head>
+
+
+<body style='margin: 0'>
+
+<div id='main' style='height: 100vh; width: 100vw'>
+
+	<div id='header' style=''>
+
+		<div id='header_text'>
+
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" height="100%" viewBox="0, 0, 190.935, 302.799">
+        <g id="Layer_1">
+          <path d="M14.691,80.961 L14.691,92.019 L47.115,92.019 L47.115,80.961 C47.115,54.196 68.891,32.423 95.653,32.423 C122.414,32.423 144.189,54.196 144.189,80.961 L144.189,160.943 L176.613,160.943 L176.613,80.961 C176.613,36.32 140.293,0 95.653,0 C51.014,0 14.691,36.32 14.691,80.961" fill="#F68212" id="path2424"/>
+          <path d="M122.529,207.621 C122.529,222.391 110.554,234.366 95.78,234.366 C81.007,234.366 69.031,222.391 69.031,207.621 C69.031,192.842 81.007,180.866 95.78,180.866 C110.554,180.866 122.529,192.842 122.529,207.621" fill="#F68212" id="path2426"/>
+          <path d="M32.423,207.333 C32.423,172.569 60.706,144.288 95.469,144.288 C130.23,144.288 158.51,172.569 158.51,207.333 C158.51,242.092 130.23,270.379 95.469,270.379 C60.706,270.379 32.423,242.092 32.423,207.333 M-0,207.333 C-0,259.967 42.831,302.799 95.469,302.799 C148.107,302.799 190.935,259.967 190.935,207.333 C190.935,154.69 148.107,111.864 95.469,111.864 C42.831,111.864 -0,154.69 -0,207.333" fill="#F68212" id="path2428"/>
+        </g>
+      </svg>
+
+
+
+      <div>
+        
+        <span>&lt</span> <span>Open.Res</span> <span>&gt</span>
+      </div>
+    </div>
+	</div>
+
+	<div id='content' style='width: 100%; height: 88%; background-color: #ff6700'>
+		
+
+		<svg id='network' width="100%" height="100%"></svg>
+
+
+	</div>
+	
+</div>
+
+
+<script>
+
+
+var col1 = '#00779c';
+var col2 = '#ff6700';
+
+
+d3.select('#content')
+	.style('background-color', function(){
+		var col = d3.hsl(col2)
+		col.s = 0.95;
+		col.l = 0.8;
+
+		return col;
+	})
+
+var site_r = 3;
+
+var col_test = d3.hsl(col1)
+col_test.opacity = 0.6;
+
+col_test.s = 0.5;
+
+col_test.l = 0.6;
+
+var cols = [col1, col2];
+
+
+console.log(col_test)
+
+var svg = d3.select("#network");
+var svg_dims = svg.node().getBoundingClientRect(),
+	width = +svg_dims.width,
+    height = +svg_dims.height;
+
+
+
+    console.log('width, height', width, height)
+
+    // width = 100;
+    // height = 100;
+
+    var dens = 803880 / 260;
+
+    var n_sites = (width * height) / dens;
+
+
+  var sites_proto = d3.range(n_sites).map(d => []);
+
+  var simulation = d3.forceSimulation(sites_proto)
+    .force('x', d3.forceX(width).strength(0.7))
+    .force('y', d3.forceY(height).strength(0.2))
+    .force('collide', d3.forceCollide()
+                        .radius(function(n){
+                          return 40 + ((Math.random()*40) - (Math.random()*30))
+                        })
+                        .strength(1)
+      )
+    .stop()
+
+
+
+  for (var i=0; i<300; ++i) {
+
+    simulation.tick();
+    simulation.nodes().forEach(function(n){
+      n.x = Math.max((0-1.5*site_r), Math.min((width + 1.5*site_r), n.x));
+      n.y = Math.max((0-1.5*site_r), Math.min((height + 1.5*site_r), n.y))
+    })
+
+
+  }
+
+
+  console.log('calc sites', sites_proto)
+
+  // var sites =[
+  // [0.1, 0.1],
+  // [0.1, 0.2],
+  // [0.2, 0.1],
+  // [0.3, 0.2],
+  // [0.25, 0.3],
+  // [0.5, 0.3],
+  // [0.4, 0.2],
+  // [0.6, 0.4],
+  // [0.5, 0.6],
+  // [0.8, 0.5],
+  // [0.5, 0.8],
+  // [0.9, 0.4],
+  // [0.9, 0.9]];
+
+  // sites = sites.map(function(d){
+  //   return [d[0]*width, d[1]*height];
+  // })
+
+  var sites = sites_proto.map(d => [d.x, d.y])
+
+  sites
+    .sort(function(a, b){
+      return Math.sqrt(Math.pow(b[0], 2) + Math.pow(b[1], 2)) - Math.sqrt(Math.pow(a[0], 2) + Math.pow(a[1], 2))
+    })
+
+
+
+    console.log('sites', sites)
+
+var voronoi = d3.voronoi();
+
+console.log('triangles', voronoi.triangles(sites))
+
+var triangle = svg.append("g")
+    .attr("class", "triangles")
+  .selectAll("path")
+  .data(voronoi.triangles(sites))
+  .enter().append("path")
+  .attr("d", function(d) { return "M" + d.join("L") + "Z"; })
+  .attr('stroke', '#999')
+  .attr('fill', function(d, i){
+
+    // console.log('idxs', i, size)
+    // col_test.s = i/size;
+
+    // col_test.s = ((Math.round(Math.random())*2)-1) * 0.1;
+
+    // col_test.s = Math.random();
+
+    // col_test.h = (Math.random() * 360)
+
+    // var new_col = d3.hsl(col_test.toString())
+
+    // new_col.s += ((Math.round(Math.random())*2)-1) * (Math.random()*0.4);
+
+    var col = d3.hsl(cols[Math.round(Math.random())])
+    col.s = 0.95;
+    col.l = 0.88;
+    // col.opacity = 0.2;
+    // col.s += ((Math.round(Math.random())*2)-1) * (Math.random()*0.2);
+    col.s -= (Math.random()*0.9);
+    // col.l -= (Math.random()*0.1);
+
+    // if (col_test.s < 0) {
+    //   col_test.s = 0
+    // }
+    // if (col_test.s > 1) {
+    //   col_test.s = 1
+    // }
+
+    // console.log('col', col_test)
+
+    return col;
+  })
+  .attr('fill-opacity', 0)
+  // .attr('stroke-opacity', 0)
+  .attr('stroke-dasharray', function(){
+
+    // console.log('path length', d3.select(this).node().getTotalLength())
+    return d3.select(this).node().getTotalLength();
+  })
+  .attr('stroke-dashoffset', function(){
+    return d3.select(this).node().getTotalLength();    
+  })
+  .transition()
+  .delay(function(d, i){return i * 40;})
+  .duration(1500)
+  // .attr('stroke-opacity', 1)
+  .attr('stroke-dashoffset', 0)
+  .transition()
+  .duration(800)
+  // .delay(function(d, i){return i * 200;})
+  .attr('fill-opacity', 1)
+  .on('end', function(){
+
+    // console.log('end trans', this)
+    d3.select(this)
+      .attr('stroke-dasharray', 0)
+  })
+
+
+
+
+var site = svg.append("g")
+    .attr("class", "sites")
+  .selectAll("circle")
+  .data(sites)
+  .enter().append("circle")
+  .attr('fill', '#BBB')
+  .attr('stroke', '#999')
+  .attr('stroke-width', 1)
+  .attr("r", site_r)
+  .attr("cx", function(d) { return d[0]; })
+  .attr("cy", function(d) { return d[1]; })
+  .attr('opacity', 0)
+  .transition()
+  .duration(300)
+  .delay(function(d, i){return i * 50;})
+  .attr('opacity', 1);
+
+
+
+
+</script>
+
+
+</body>
+</html>
