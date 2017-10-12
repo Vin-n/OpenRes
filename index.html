@@ -6,6 +6,7 @@
 	<script src="https://d3js.org/d3.v4.min.js"></script>
 	<script src="https://d3js.org/d3-color.v1.min.js"></script>
 
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
 
 	<style type="text/css">
 
@@ -13,14 +14,18 @@
 			/*border: 1px solid red;*/
 		}
 
-    #main {
 
+
+    #main {
+      height: 100vh; 
+      width: 100vw;
     }
 
 		#header {
 			width: 100%;
-			height: 12%;
-			background-color: #00779c;
+			height: 16%;
+      background-color: rgb(131, 200, 223);
+			/*background-color: #00779c;*/
 
       font-size: 12vh;
 
@@ -35,14 +40,128 @@
 
       display: flex;
       justify-content: center;
+      align-items: center;
 
     }
+
 
     #content {
+      width: 100%;
+      height: 84%;
+      background-color: #ff6700;
+      position: relative;
+
 
     }
 
+    #content > svg {
 
+
+      position: relative;
+    }
+
+
+    #content_text{
+      height: 100%;
+      width: 100%;
+
+      display: flex;
+      flex-direction: row;
+
+      justify-content: center;
+
+      position: absolute;
+      z-index: 10;
+
+      font-size: 20px;
+      font-family: sans-serif;
+      font-weight: 200;
+
+
+      overflow: scroll;
+
+
+    }
+
+    #side_text {
+      height: 100%;
+      width: 20%;
+
+      display: flex;
+      flex-direction: column;
+
+      justify-content: flex-start;
+    }
+
+    #side_text > div {
+      background-color: rgba(255, 255, 255, 0.4);
+
+      margin: 20px;
+
+      padding: 30px;
+
+      border-radius: 5px;
+
+      border-top: 3.5px solid #00779c;
+    }
+
+    #reg_link {
+      font-family: 'Josefin Sans', sans-serif;
+
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-top: 0px;
+      font-family: 'Josefin Sans', sans-serif;
+    }
+
+    #main_text {
+      height: 100%;
+
+      width: 60%;
+
+
+
+      /*background-color: rgba(255, 255, 255, 0.5)*/
+
+      /*background-color: white;*/
+
+    }
+
+    #main_text > div {
+      /*background-color: rgba(131, 200, 223, 0.4);*/
+      background-color: rgba(255, 255, 255, 0.4);
+
+      margin: 20px;
+
+      padding: 30px;
+
+      border-radius: 5px;
+
+      border-top: 3.5px solid #00779c;
+
+    }
+
+    @media screen and (max-width: 650px) {
+      #content_text {
+        flex-direction: column;
+        display: block;
+      }
+
+      #side_text {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        /*display: block;*/
+      }
+
+      #main_text {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
 
 
 	</style>
@@ -51,33 +170,110 @@
 
 <body style='margin: 0'>
 
-<div id='main' style='height: 100vh; width: 100vw'>
+<div id='main' style=''>
 
 	<div id='header' style=''>
 
 		<div id='header_text'>
 
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" height="100%" viewBox="0, 0, 190.935, 302.799">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" height="90%" viewBox="0, 0, 2950.574, 656.26">
         <g id="Layer_1">
-          <path d="M14.691,80.961 L14.691,92.019 L47.115,92.019 L47.115,80.961 C47.115,54.196 68.891,32.423 95.653,32.423 C122.414,32.423 144.189,54.196 144.189,80.961 L144.189,160.943 L176.613,160.943 L176.613,80.961 C176.613,36.32 140.293,0 95.653,0 C51.014,0 14.691,36.32 14.691,80.961" fill="#F68212" id="path2424"/>
-          <path d="M122.529,207.621 C122.529,222.391 110.554,234.366 95.78,234.366 C81.007,234.366 69.031,222.391 69.031,207.621 C69.031,192.842 81.007,180.866 95.78,180.866 C110.554,180.866 122.529,192.842 122.529,207.621" fill="#F68212" id="path2426"/>
-          <path d="M32.423,207.333 C32.423,172.569 60.706,144.288 95.469,144.288 C130.23,144.288 158.51,172.569 158.51,207.333 C158.51,242.092 130.23,270.379 95.469,270.379 C60.706,270.379 32.423,242.092 32.423,207.333 M-0,207.333 C-0,259.967 42.831,302.799 95.469,302.799 C148.107,302.799 190.935,259.967 190.935,207.333 C190.935,154.69 148.107,111.864 95.469,111.864 C42.831,111.864 -0,154.69 -0,207.333" fill="#F68212" id="path2428"/>
+          <g>
+            <g id="path2424">
+              <path d="M43.262,161.728 L43.262,181.495 L101.224,181.495 L101.224,161.728 C101.224,113.883 140.152,74.959 187.991,74.959 C235.83,74.959 274.755,113.883 274.755,161.728 L274.755,304.705 L332.717,304.705 L332.717,161.728 C332.717,81.927 267.79,17 187.991,17 C108.193,17 43.262,81.927 43.262,161.728" fill="#EE9F61"/>
+              <path d="M43.262,161.728 L43.262,181.495 L101.224,181.495 L101.224,161.728 C101.224,113.883 140.152,74.959 187.991,74.959 C235.83,74.959 274.755,113.883 274.755,161.728 L274.755,304.705 L332.717,304.705 L332.717,161.728 C332.717,81.927 267.79,17 187.991,17 C108.193,17 43.262,81.927 43.262,161.728" fill-opacity="0" stroke="#6A6B6B" stroke-width="16"/>
+            </g>
+            <g id="path2426">
+              <path d="M236.035,388.149 C236.035,414.552 214.629,435.959 188.219,435.959 C161.811,435.959 140.402,414.552 140.402,388.149 C140.402,361.73 161.811,340.321 188.219,340.321 C214.629,340.321 236.035,361.73 236.035,388.149" fill="#EE9F61"/>
+              <path d="M236.035,388.149 C236.035,414.552 214.629,435.959 188.219,435.959 C161.811,435.959 140.402,414.552 140.402,388.149 C140.402,361.73 161.811,340.321 188.219,340.321 C214.629,340.321 236.035,361.73 236.035,388.149" fill-opacity="0" stroke="#6A6B6B" stroke-width="16"/>
+            </g>
+            <g id="path2428">
+              <path d="M74.959,387.633 C74.959,325.488 125.52,274.932 187.662,274.932 C249.802,274.932 300.356,325.488 300.356,387.633 C300.356,449.771 249.802,500.336 187.662,500.336 C125.52,500.336 74.959,449.771 74.959,387.633 M17,387.633 C17,481.724 93.566,558.291 187.662,558.291 C281.761,558.291 358.32,481.724 358.32,387.633 C358.32,293.528 281.761,216.97 187.662,216.97 C93.566,216.97 17,293.528 17,387.633" fill="#EE9F61"/>
+              <path d="M74.959,387.633 C74.959,325.488 125.52,274.932 187.662,274.932 C249.802,274.932 300.356,325.488 300.356,387.633 C300.356,449.771 249.802,500.336 187.662,500.336 C125.52,500.336 74.959,449.771 74.959,387.633 M17,387.633 C17,481.724 93.566,558.291 187.662,558.291 C281.761,558.291 358.32,481.724 358.32,387.633 C358.32,293.528 281.761,216.97 187.662,216.97 C93.566,216.97 17,293.528 17,387.633" fill-opacity="0" stroke="#6A6B6B" stroke-width="16"/>
+            </g>
+          </g>
+          <g>
+            <text transform="matrix(1, 0, 0, 1, 1687.319, 340.107)">
+              <tspan x="-1035.19" y="71.463" font-family="LetterGothicStd-Bold" font-size="450" kerning="-5" fill="#0E0C0C">Open.Res</tspan>
+            </text>
+            <path d="M687.68,249.57 C687.68,295.47 687.229,417.87 787.13,417.87 C889.729,417.87 886.579,292.77 886.579,249.57 C886.579,189.27 881.63,81.27 787.13,81.27 C732.68,81.27 687.68,114.12 687.68,249.57 z M787.13,389.52 C719.63,389.52 721.43,286.47 721.43,249.57 C721.43,230.67 715.13,109.62 787.13,109.62 C857.329,109.62 852.829,219.87 852.829,249.57 C852.829,367.02 820.88,389.52 787.13,389.52 z M988.68,164.97 L956.729,169.02 C966.63,198.27 968.43,228.87 968.43,259.47 L968.43,503.82 L1002.18,503.82 L1002.18,402.57 C1019.279,411.57 1033.679,416.52 1053.479,416.52 C1092.179,416.52 1151.579,384.12 1151.579,292.77 C1151.579,198.27 1097.13,165.87 1054.829,165.87 C1026.929,165.87 1016.13,174.87 995.88,192.87 z M1002.18,236.07 C1012.529,214.02 1026.929,194.22 1054.38,194.22 C1076.429,194.22 1117.829,212.67 1117.829,291.42 C1117.829,353.97 1087.679,388.17 1048.079,388.17 C1031.429,388.17 1015.68,379.17 1002.18,368.37 z M1415.229,299.97 L1415.229,281.52 C1415.229,255.42 1402.63,165.87 1322.53,165.87 C1250.53,165.87 1221.28,229.77 1221.28,292.77 C1221.28,355.32 1249.63,416.52 1320.729,416.52 C1354.03,416.52 1382.829,406.17 1412.979,392.67 L1398.579,362.52 C1376.53,376.02 1349.979,388.17 1323.429,388.17 C1286.53,388.17 1256.829,366.12 1255.03,299.97 z M1254.579,271.62 C1263.579,223.02 1282.03,194.22 1319.829,194.22 C1357.63,194.22 1380.13,232.02 1381.479,271.62 z M1530.829,311.22 C1530.829,226.62 1570.88,194.22 1602.829,194.22 C1632.53,194.22 1632.53,228.87 1632.53,251.82 L1632.53,411.57 L1666.28,411.57 L1666.28,241.92 C1666.28,200.97 1646.479,165.87 1608.229,165.87 C1574.479,165.87 1543.429,186.57 1526.329,214.92 L1518.679,170.82 L1486.28,170.82 C1495.28,209.07 1497.079,250.02 1497.079,290.52 L1497.079,411.57 L1530.829,411.57 z M1811.13,382.77 C1811.13,402.57 1827.78,417.87 1847.579,417.87 C1866.929,417.87 1883.579,402.57 1883.579,382.77 C1883.579,362.97 1866.929,348.12 1847.579,348.12 C1828.229,348.12 1811.13,362.97 1811.13,382.77 z M2036.079,411.57 L2069.83,411.57 L2069.83,277.47 C2086.03,277.02 2102.229,277.02 2118.429,276.57 L2197.179,411.57 L2238.129,411.57 L2150.83,268.92 C2195.83,243.27 2208.429,212.67 2208.429,179.37 C2208.429,160.47 2201.229,87.57 2120.229,87.57 L2036.079,87.57 z M2069.83,248.67 L2069.83,115.92 L2103.129,115.92 C2156.679,115.92 2174.679,134.37 2174.679,177.57 C2174.679,225.27 2147.679,248.67 2101.78,248.67 z M2475.229,299.97 L2475.229,281.52 C2475.229,255.42 2462.629,165.87 2382.53,165.87 C2310.53,165.87 2281.28,229.77 2281.28,292.77 C2281.28,355.32 2309.629,416.52 2380.729,416.52 C2414.03,416.52 2442.83,406.17 2472.979,392.67 L2458.58,362.52 C2436.53,376.02 2409.979,388.17 2383.429,388.17 C2346.53,388.17 2316.83,366.12 2315.03,299.97 z M2314.58,271.62 C2323.58,223.02 2342.03,194.22 2379.83,194.22 C2417.629,194.22 2440.129,232.02 2441.479,271.62 z M2715.929,193.77 C2692.08,176.67 2668.229,165.87 2638.08,165.87 C2596.229,165.87 2563.83,194.22 2563.83,229.32 C2563.83,272.52 2603.429,288.72 2637.629,301.77 C2662.379,311.22 2687.58,319.77 2687.58,351.27 C2687.58,375.57 2668.229,388.17 2645.729,388.17 C2617.379,388.17 2586.33,367.92 2567.429,347.67 L2548.979,374.67 C2575.53,398.52 2611.53,416.52 2647.979,416.52 C2685.33,416.52 2721.33,389.52 2721.33,349.92 C2721.33,302.22 2681.729,286.47 2643.929,272.52 C2625.479,265.77 2597.58,254.07 2597.58,230.67 C2597.58,209.07 2616.479,194.22 2636.729,194.22 C2661.03,194.22 2682.179,207.72 2701.08,221.22 z" fill-opacity="0" stroke="#0E0C0C" stroke-width="15"/>
+          </g>
+          <text transform="matrix(1, 0, 0, 1, 2820.668, 377.222)">
+            <tspan x="-113.405" y="71.463" font-family="LetterGothicStd" font-size="450" kerning="-5" fill="#0E0C0C">&gt;</tspan>
+          </text>
+          <text transform="matrix(1, 0, 0, 1, 538.445, 377.222)">
+            <tspan x="-113.405" y="71.463" font-family="LetterGothicStd" font-size="450" kerning="-5" fill="#0E0C0C">&lt;</tspan>
+          </text>
         </g>
-      </svg>
+    </svg>
 
-
-
-      <div>
-        
-        <span>&lt</span> <span>Open.Res</span> <span>&gt</span>
-      </div>
     </div>
 	</div>
 
-	<div id='content' style='width: 100%; height: 88%; background-color: #ff6700'>
+	<div id='content' style=''>
 		
+    <div id='content_text'>
 
-		<svg id='network' width="100%" height="100%"></svg>
+      <div id='side_text'>
+        <div id='reg_link'>
+          Register Here
+        </div>
+
+        <div>
+          4-8pm <br><br>
+          Tuesdays and Thursdays <br><br>
+          21, 23, 28 &amp 30 November
+        </div>
+
+        
+      </div>
+
+      <div id='main_text'>
+
+      <div>
+        <h1>The Future of Research is Online</h1>
+
+        The nature of research is changing. The reproducibility crisis has prompted experts to call for more open science and communication in research. Additionally, researchers are being pushed to maintain more of an online presence, and altmetrics now contribute to researcher's career progression and evaluations.
+
+        At Open Research, we will be empowering researchers to get their data and the story it tells online, and encouraging greater transparency of the research process and openness of data.
+      </div>
+
+      <div>
+        <h1>What can participants expect to get out of this event?</h1>
+
+        <p> <b>Participants will learn how to:</b></p>
+
+        <ul>
+          
+          <li>
+            <b>Conduct data exploration and wrangling</b> There will be a range of workshops designed to teach you how to use your specific tools to explore and visualise their datasets. Tools include R, Matlab and Python.
+          </li>
+
+          <li>
+            <b>Effective data visualisation</b> Using visual information to the greatest effect, accuracy and impact and the visualisation tools in your respective programming languages.
+          </li>
+          <li>
+            <b>Telling your research story online</b> Hosting your data, code (via github) and visualisations and research story online.
+          </li>
+        </ul>
+
+      </div>
+
+      <div>
+
+        <h1>Who is this event aimed at?</h1>
+
+        This event is aimed at all researchers who would like to learn how to better analyse and communicate their data online. It will be suitable for all researchers - from those who haven’t coded before, to those who are experienced at coding in their specific tools and who would like to learn how to use data to convey a message online.
+
+        If you are new to programming, please consider attending one of our beginners workshops
+      </div>
+
+      </div>
+      
+    </div>
+
+    <svg id='network' width="100%" height="100%"></svg>
+
 
 
 	</div>
@@ -103,184 +299,145 @@ d3.select('#content')
 
 var site_r = 3;
 
-var col_test = d3.hsl(col1)
-col_test.opacity = 0.6;
-
-col_test.s = 0.5;
-
-col_test.l = 0.6;
-
 var cols = [col1, col2];
 
+make_network();
 
-console.log(col_test)
+var network_animation;
 
-var svg = d3.select("#network");
-var svg_dims = svg.node().getBoundingClientRect(),
-	width = +svg_dims.width,
-    height = +svg_dims.height;
-
-
-
-    console.log('width, height', width, height)
-
-    // width = 100;
-    // height = 100;
-
-    var dens = 803880 / 260;
-
-    var n_sites = (width * height) / dens;
+window.onresize = function(){
+  d3.select("#network").selectAll('*').remove();
+  clearTimeout(network_animation);
+  network_animation = setTimeout(make_network, 500)
+}
 
 
-  var sites_proto = d3.range(n_sites).map(d => []);
+function make_network(){
+  var svg = d3.select("#network");
 
-  var simulation = d3.forceSimulation(sites_proto)
-    .force('x', d3.forceX(width).strength(0.7))
-    .force('y', d3.forceY(height).strength(0.2))
-    .force('collide', d3.forceCollide()
-                        .radius(function(n){
-                          return 40 + ((Math.random()*40) - (Math.random()*30))
-                        })
-                        .strength(1)
-      )
-    .stop()
+  svg.selectAll('*').remove();
+
+  var svg_dims = svg.node().getBoundingClientRect(),
+    width = +svg_dims.width,
+      height = +svg_dims.height;
 
 
 
-  for (var i=0; i<300; ++i) {
+      console.log('width, height', width, height)
 
-    simulation.tick();
-    simulation.nodes().forEach(function(n){
-      n.x = Math.max((0-1.5*site_r), Math.min((width + 1.5*site_r), n.x));
-      n.y = Math.max((0-1.5*site_r), Math.min((height + 1.5*site_r), n.y))
+      // width = 100;
+      // height = 100;
+
+      var dens = 803880 / 260;
+
+      var n_sites = (width * height) / dens;
+
+
+    var sites_proto = d3.range(n_sites).map(d => []);
+
+    var simulation = d3.forceSimulation(sites_proto)
+      .force('x', d3.forceX(width).strength(0.7))
+      .force('y', d3.forceY(height).strength(0.2))
+      .force('collide', d3.forceCollide()
+                          .radius(function(n){
+                            return 40 + ((Math.random()*40) - (Math.random()*30))
+                          })
+                          .strength(1)
+        )
+      .stop()
+
+
+
+    for (var i=0; i<300; ++i) {
+
+      simulation.tick();
+      simulation.nodes().forEach(function(n){
+        n.x = Math.max((0-1.5*site_r), Math.min((width + 1.5*site_r), n.x));
+        n.y = Math.max((0-1.5*site_r), Math.min((height + 1.5*site_r), n.y))
+      })
+
+
+    }
+
+
+    console.log('calc sites', sites_proto)
+
+    var sites = sites_proto.map(d => [d.x, d.y])
+
+    sites
+      .sort(function(a, b){
+        return Math.sqrt(Math.pow(b[0], 2) + Math.pow(b[1], 2)) - Math.sqrt(Math.pow(a[0], 2) + Math.pow(a[1], 2))
+      })
+
+
+
+      console.log('sites', sites)
+
+  var voronoi = d3.voronoi();
+
+  console.log('triangles', voronoi.triangles(sites))
+
+  var triangle = svg.append("g")
+      .attr("class", "triangles")
+    .selectAll("path")
+    .data(voronoi.triangles(sites))
+    .enter().append("path")
+    .attr("d", function(d) { return "M" + d.join("L") + "Z"; })
+    .attr('stroke', '#999')
+    .attr('fill', function(d, i){
+
+      var col = d3.hsl(col2)
+      // var col = d3.hsl(cols[Math.round(Math.random())])
+      col.s = 0.9;
+      col.l = 0.8;
+
+      col.s -= (Math.random()*0.9);
+
+
+      return col;
+    })
+    .attr('fill-opacity', 0)
+    // .attr('stroke-opacity', 0)
+    .attr('stroke-dasharray', function(){
+
+      return d3.select(this).node().getTotalLength();
+    })
+    .attr('stroke-dashoffset', function(){
+      return d3.select(this).node().getTotalLength();    
+    })
+    .transition()
+    .delay(function(d, i){return i * 40;})
+    .duration(1500)
+    .attr('stroke-dashoffset', 0)
+    .transition()
+    .duration(800)
+    .attr('fill-opacity', 1)
+    .on('end', function(){
+
+      d3.select(this)
+        .attr('stroke-dasharray', 0)
     })
 
 
-  }
 
 
-  console.log('calc sites', sites_proto)
-
-  // var sites =[
-  // [0.1, 0.1],
-  // [0.1, 0.2],
-  // [0.2, 0.1],
-  // [0.3, 0.2],
-  // [0.25, 0.3],
-  // [0.5, 0.3],
-  // [0.4, 0.2],
-  // [0.6, 0.4],
-  // [0.5, 0.6],
-  // [0.8, 0.5],
-  // [0.5, 0.8],
-  // [0.9, 0.4],
-  // [0.9, 0.9]];
-
-  // sites = sites.map(function(d){
-  //   return [d[0]*width, d[1]*height];
-  // })
-
-  var sites = sites_proto.map(d => [d.x, d.y])
-
-  sites
-    .sort(function(a, b){
-      return Math.sqrt(Math.pow(b[0], 2) + Math.pow(b[1], 2)) - Math.sqrt(Math.pow(a[0], 2) + Math.pow(a[1], 2))
-    })
-
-
-
-    console.log('sites', sites)
-
-var voronoi = d3.voronoi();
-
-console.log('triangles', voronoi.triangles(sites))
-
-var triangle = svg.append("g")
-    .attr("class", "triangles")
-  .selectAll("path")
-  .data(voronoi.triangles(sites))
-  .enter().append("path")
-  .attr("d", function(d) { return "M" + d.join("L") + "Z"; })
-  .attr('stroke', '#999')
-  .attr('fill', function(d, i){
-
-    // console.log('idxs', i, size)
-    // col_test.s = i/size;
-
-    // col_test.s = ((Math.round(Math.random())*2)-1) * 0.1;
-
-    // col_test.s = Math.random();
-
-    // col_test.h = (Math.random() * 360)
-
-    // var new_col = d3.hsl(col_test.toString())
-
-    // new_col.s += ((Math.round(Math.random())*2)-1) * (Math.random()*0.4);
-
-    var col = d3.hsl(cols[Math.round(Math.random())])
-    col.s = 0.95;
-    col.l = 0.88;
-    // col.opacity = 0.2;
-    // col.s += ((Math.round(Math.random())*2)-1) * (Math.random()*0.2);
-    col.s -= (Math.random()*0.9);
-    // col.l -= (Math.random()*0.1);
-
-    // if (col_test.s < 0) {
-    //   col_test.s = 0
-    // }
-    // if (col_test.s > 1) {
-    //   col_test.s = 1
-    // }
-
-    // console.log('col', col_test)
-
-    return col;
-  })
-  .attr('fill-opacity', 0)
-  // .attr('stroke-opacity', 0)
-  .attr('stroke-dasharray', function(){
-
-    // console.log('path length', d3.select(this).node().getTotalLength())
-    return d3.select(this).node().getTotalLength();
-  })
-  .attr('stroke-dashoffset', function(){
-    return d3.select(this).node().getTotalLength();    
-  })
-  .transition()
-  .delay(function(d, i){return i * 40;})
-  .duration(1500)
-  // .attr('stroke-opacity', 1)
-  .attr('stroke-dashoffset', 0)
-  .transition()
-  .duration(800)
-  // .delay(function(d, i){return i * 200;})
-  .attr('fill-opacity', 1)
-  .on('end', function(){
-
-    // console.log('end trans', this)
-    d3.select(this)
-      .attr('stroke-dasharray', 0)
-  })
-
-
-
-
-var site = svg.append("g")
-    .attr("class", "sites")
-  .selectAll("circle")
-  .data(sites)
-  .enter().append("circle")
-  .attr('fill', '#BBB')
-  .attr('stroke', '#999')
-  .attr('stroke-width', 1)
-  .attr("r", site_r)
-  .attr("cx", function(d) { return d[0]; })
-  .attr("cy", function(d) { return d[1]; })
-  .attr('opacity', 0)
-  .transition()
-  .duration(300)
-  .delay(function(d, i){return i * 50;})
-  .attr('opacity', 1);
+  var site = svg.append("g")
+      .attr("class", "sites")
+    .selectAll("circle")
+    .data(sites)
+    .enter().append("circle")
+    .attr('fill', '#BBB')
+    .attr('stroke', '#999')
+    .attr('stroke-width', 1)
+    .attr("r", site_r)
+    .attr("cx", function(d) { return d[0]; })
+    .attr("cy", function(d) { return d[1]; })
+    .attr('opacity', 0)
+    .transition()
+    .duration(300)
+    .delay(function(d, i){return i * 50;})
+    .attr('opacity', 1);
+}
 
 
 
