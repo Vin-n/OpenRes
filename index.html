@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title></title>
 
 	<script src="https://d3js.org/d3.v4.min.js"></script>
@@ -29,7 +30,7 @@
       background-color: rgb(131, 200, 223);
 			/*background-color: #00779c;*/
 
-      font-size: 12vh;
+      font-size: 10vw;
 
       display: flex;
 
@@ -38,7 +39,7 @@
 
     #header_text {
       height: 100%;
-      font-size: 1em;
+      font-size: 0.7em;
       font-family: 'Josefin Sans', sans-serif;
 
       display: flex;
@@ -147,7 +148,21 @@
 
     }
 
+    @media screen and (max-width: 1000px) {
+      #side_text {
+        width: 34%;
+      }
+
+      #header_text {
+        font-size: 1.1em;
+      }
+    }
+
     @media screen and (max-width: 700px) {
+      #header_text {
+        font-size: 1.4em;
+      }
+
       #content_text {
         flex-direction: column;
         display: block;
