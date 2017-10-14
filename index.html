@@ -15,13 +15,19 @@
 			/*border: 1px solid red;*/
 		}
 
+    * {
+      position: relative;
+    }
+
     body {
-      overflow: hidden;
     }
 
     #main {
       height: 100vh; 
       width: 100vw;
+
+      background-color: #ff6700;
+      overflow: auto;
     }
 
 		#header {
@@ -35,6 +41,8 @@
       display: flex;
 
       justify-content: center;
+
+      z-index: 10;
 		}
 
     #header_text {
@@ -48,21 +56,26 @@
 
     }
 
+    #network {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+
+      top: 0;
+      left: 0;
+      z-index: 2;
+    }
+
 
     #content {
       width: 100%;
-      height: 84%;
-      background-color: #ff6700;
+      /*height: 84%;*/
+      min-height: 100%; 
       position: relative;
 
-
+      z-index: 1;
     }
 
-    #content > svg {
-
-
-      position: relative;
-    }
 
 
     #content_text{
@@ -82,7 +95,9 @@
       font-weight: 200;
 
 
-      overflow: scroll;
+      /*overflow: scroll;*/
+
+
 
 
     }
@@ -196,6 +211,7 @@
 
 <body style='margin: 0'>
 
+
 <div id='main' style=''>
 
 	<div id='header' style=''>
@@ -260,6 +276,9 @@
 	</div>
 
 	<div id='content' style=''>
+
+    <svg id='network' style=''></svg>
+    <!-- <svg id='network' width="100%" height="100%" style=''></svg> -->
 		
     <div id='content_text'>
 
@@ -312,6 +331,7 @@
 
         <h1>Who is this event aimed at?</h1>
 
+
         This event is aimed at all researchers who would like to learn how to better analyse and communicate their data online. It will be suitable for all researchers - from those who haven’t coded before, to those who are experienced at coding in their specific tools and who would like to learn how to use data to convey a message online.
 
         If you are new to programming, please consider attending one of our beginners workshops
@@ -321,7 +341,7 @@
       
     </div>
 
-    <svg id='network' width="100%" height="100%"></svg>
+    
 
 
 
@@ -337,7 +357,7 @@ var col1 = '#00779c';
 var col2 = '#ff6700';
 
 
-d3.select('#content')
+d3.select('#main')
 	.style('background-color', function(){
 		var col = d3.hsl(col2)
 		col.s = 0.95;
