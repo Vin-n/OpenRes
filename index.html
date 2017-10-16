@@ -463,6 +463,10 @@ function make_network(){
 
       col.s -= (Math.random()*0.9);
 
+      var col_range = 10
+
+      col.h += ((Math.random()*col_range)-(col_range/2))
+
 
       return col;
     })
