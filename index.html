@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>OpenRes</title>
 
-	<script src="https://d3js.org/d3.v4.min.js"></script>
-	<script src="https://d3js.org/d3-color.v1.min.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108170182-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-108170182-1');
+  </script>
+
+	<!-- <script src="https://d3js.org/d3.v4.min.js"></script> -->
+  <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.min.js'></script>
+
+  <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/d3-color/1.0.3/d3-color.min.js'></script>
+	<!-- <script src="https://d3js.org/d3-color.v1.min.js"></script> -->
 
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
 
@@ -14,13 +28,28 @@
 			/*border: 1px solid red;*/
 		}
 
+    * {
+      position: relative;
+    }
+
     body {
-      overflow: hidden;
+    }
+
+    table, th, td {
+        border-bottom: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 8px;
     }
 
     #main {
       height: 100vh; 
       width: 100vw;
+
+      background-color: #ff6700;
+      overflow: auto;
     }
 
 		#header {
@@ -29,16 +58,19 @@
       background-color: rgb(131, 200, 223);
 			/*background-color: #00779c;*/
 
-      font-size: 12vh;
+      /*font-size: 13vh;*/
+      font-size: 10vw;
 
       display: flex;
 
       justify-content: center;
+
+      z-index: 10;
 		}
 
     #header_text {
       height: 100%;
-      font-size: 1em;
+      font-size: 0.6em;
       font-family: 'Josefin Sans', sans-serif;
 
       display: flex;
@@ -47,21 +79,26 @@
 
     }
 
+    #network {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+
+      top: 0;
+      left: 0;
+      z-index: 2;
+    }
+
 
     #content {
       width: 100%;
-      height: 84%;
-      background-color: #ff6700;
+      /*height: 84%;*/
+      min-height: 100%; 
       position: relative;
 
-
+      z-index: 1;
     }
 
-    #content > svg {
-
-
-      position: relative;
-    }
 
 
     #content_text{
@@ -81,14 +118,16 @@
       font-weight: 200;
 
 
-      overflow: scroll;
+      /*overflow: scroll;*/
+
+
 
 
     }
 
     #side_text {
       height: 100%;
-      width: 20%;
+      width: 25%;
 
       display: flex;
       flex-direction: column;
@@ -106,11 +145,21 @@
       border-radius: 5px;
 
       border-top: 3.5px solid #00779c;
+      border-bottom: 3.5px solid #00779c;
     }
 
     #reg_link {
       font-family: 'Josefin Sans', sans-serif;
       font-size: 26px;
+      color: black;
+
+      text-decoration: none;
+
+    }
+
+    #reg_link:hover {
+      text-decoration: underline;
+      color: #00779c;
 
     }
 
@@ -147,7 +196,25 @@
 
     }
 
+    #main_text li {
+      margin-top: 15px;
+    }
+
+    @media screen and (max-width: 1000px) {
+      #side_text {
+        width: 34%;
+      }
+
+      #header_text {
+        font-size: 1.1em;
+      }
+    }
+
     @media screen and (max-width: 700px) {
+      #header_text {
+        font-size: 1.4em;
+      }
+
       #content_text {
         flex-direction: column;
         display: block;
@@ -156,7 +223,7 @@
       #side_text {
         width: 100%;
         height: auto;
-        flex-direction: row;
+        flex-direction: column;
         /*display: block;*/
       }
 
@@ -168,11 +235,19 @@
     }
 
 
+/*    @media only screen and (orientation: landscape) {
+      #header_text {
+        font-size: 0.88em;
+      }
+    }*/
+
+
 	</style>
 </head>
 
 
 <body style='margin: 0'>
+
 
 <div id='main' style=''>
 
@@ -203,53 +278,33 @@
       &ltOpen.Res&gt
     </div>
 
-<!--     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" height="90%" viewBox="0, 0, 2950.574, 656.26">
-        <g id="Layer_1">
-          <g>
-            <g id="path2424">
-              <path d="M43.262,161.728 L43.262,181.495 L101.224,181.495 L101.224,161.728 C101.224,113.883 140.152,74.959 187.991,74.959 C235.83,74.959 274.755,113.883 274.755,161.728 L274.755,304.705 L332.717,304.705 L332.717,161.728 C332.717,81.927 267.79,17 187.991,17 C108.193,17 43.262,81.927 43.262,161.728" fill="#EE9F61"/>
-              <path d="M43.262,161.728 L43.262,181.495 L101.224,181.495 L101.224,161.728 C101.224,113.883 140.152,74.959 187.991,74.959 C235.83,74.959 274.755,113.883 274.755,161.728 L274.755,304.705 L332.717,304.705 L332.717,161.728 C332.717,81.927 267.79,17 187.991,17 C108.193,17 43.262,81.927 43.262,161.728" fill-opacity="0" stroke="#6A6B6B" stroke-width="16"/>
-            </g>
-            <g id="path2426">
-              <path d="M236.035,388.149 C236.035,414.552 214.629,435.959 188.219,435.959 C161.811,435.959 140.402,414.552 140.402,388.149 C140.402,361.73 161.811,340.321 188.219,340.321 C214.629,340.321 236.035,361.73 236.035,388.149" fill="#EE9F61"/>
-              <path d="M236.035,388.149 C236.035,414.552 214.629,435.959 188.219,435.959 C161.811,435.959 140.402,414.552 140.402,388.149 C140.402,361.73 161.811,340.321 188.219,340.321 C214.629,340.321 236.035,361.73 236.035,388.149" fill-opacity="0" stroke="#6A6B6B" stroke-width="16"/>
-            </g>
-            <g id="path2428">
-              <path d="M74.959,387.633 C74.959,325.488 125.52,274.932 187.662,274.932 C249.802,274.932 300.356,325.488 300.356,387.633 C300.356,449.771 249.802,500.336 187.662,500.336 C125.52,500.336 74.959,449.771 74.959,387.633 M17,387.633 C17,481.724 93.566,558.291 187.662,558.291 C281.761,558.291 358.32,481.724 358.32,387.633 C358.32,293.528 281.761,216.97 187.662,216.97 C93.566,216.97 17,293.528 17,387.633" fill="#EE9F61"/>
-              <path d="M74.959,387.633 C74.959,325.488 125.52,274.932 187.662,274.932 C249.802,274.932 300.356,325.488 300.356,387.633 C300.356,449.771 249.802,500.336 187.662,500.336 C125.52,500.336 74.959,449.771 74.959,387.633 M17,387.633 C17,481.724 93.566,558.291 187.662,558.291 C281.761,558.291 358.32,481.724 358.32,387.633 C358.32,293.528 281.761,216.97 187.662,216.97 C93.566,216.97 17,293.528 17,387.633" fill-opacity="0" stroke="#6A6B6B" stroke-width="16"/>
-            </g>
-          </g> -->
-          <!-- <g>
-            <text transform="matrix(1, 0, 0, 1, 1687.319, 340.107)">
-              <tspan x="-1035.19" y="71.463" font-family="LetterGothicStd-Bold" font-size="450" kerning="-5" fill="#0E0C0C">Open.Res</tspan>
-            </text>
-            <path d="M687.68,249.57 C687.68,295.47 687.229,417.87 787.13,417.87 C889.729,417.87 886.579,292.77 886.579,249.57 C886.579,189.27 881.63,81.27 787.13,81.27 C732.68,81.27 687.68,114.12 687.68,249.57 z M787.13,389.52 C719.63,389.52 721.43,286.47 721.43,249.57 C721.43,230.67 715.13,109.62 787.13,109.62 C857.329,109.62 852.829,219.87 852.829,249.57 C852.829,367.02 820.88,389.52 787.13,389.52 z M988.68,164.97 L956.729,169.02 C966.63,198.27 968.43,228.87 968.43,259.47 L968.43,503.82 L1002.18,503.82 L1002.18,402.57 C1019.279,411.57 1033.679,416.52 1053.479,416.52 C1092.179,416.52 1151.579,384.12 1151.579,292.77 C1151.579,198.27 1097.13,165.87 1054.829,165.87 C1026.929,165.87 1016.13,174.87 995.88,192.87 z M1002.18,236.07 C1012.529,214.02 1026.929,194.22 1054.38,194.22 C1076.429,194.22 1117.829,212.67 1117.829,291.42 C1117.829,353.97 1087.679,388.17 1048.079,388.17 C1031.429,388.17 1015.68,379.17 1002.18,368.37 z M1415.229,299.97 L1415.229,281.52 C1415.229,255.42 1402.63,165.87 1322.53,165.87 C1250.53,165.87 1221.28,229.77 1221.28,292.77 C1221.28,355.32 1249.63,416.52 1320.729,416.52 C1354.03,416.52 1382.829,406.17 1412.979,392.67 L1398.579,362.52 C1376.53,376.02 1349.979,388.17 1323.429,388.17 C1286.53,388.17 1256.829,366.12 1255.03,299.97 z M1254.579,271.62 C1263.579,223.02 1282.03,194.22 1319.829,194.22 C1357.63,194.22 1380.13,232.02 1381.479,271.62 z M1530.829,311.22 C1530.829,226.62 1570.88,194.22 1602.829,194.22 C1632.53,194.22 1632.53,228.87 1632.53,251.82 L1632.53,411.57 L1666.28,411.57 L1666.28,241.92 C1666.28,200.97 1646.479,165.87 1608.229,165.87 C1574.479,165.87 1543.429,186.57 1526.329,214.92 L1518.679,170.82 L1486.28,170.82 C1495.28,209.07 1497.079,250.02 1497.079,290.52 L1497.079,411.57 L1530.829,411.57 z M1811.13,382.77 C1811.13,402.57 1827.78,417.87 1847.579,417.87 C1866.929,417.87 1883.579,402.57 1883.579,382.77 C1883.579,362.97 1866.929,348.12 1847.579,348.12 C1828.229,348.12 1811.13,362.97 1811.13,382.77 z M2036.079,411.57 L2069.83,411.57 L2069.83,277.47 C2086.03,277.02 2102.229,277.02 2118.429,276.57 L2197.179,411.57 L2238.129,411.57 L2150.83,268.92 C2195.83,243.27 2208.429,212.67 2208.429,179.37 C2208.429,160.47 2201.229,87.57 2120.229,87.57 L2036.079,87.57 z M2069.83,248.67 L2069.83,115.92 L2103.129,115.92 C2156.679,115.92 2174.679,134.37 2174.679,177.57 C2174.679,225.27 2147.679,248.67 2101.78,248.67 z M2475.229,299.97 L2475.229,281.52 C2475.229,255.42 2462.629,165.87 2382.53,165.87 C2310.53,165.87 2281.28,229.77 2281.28,292.77 C2281.28,355.32 2309.629,416.52 2380.729,416.52 C2414.03,416.52 2442.83,406.17 2472.979,392.67 L2458.58,362.52 C2436.53,376.02 2409.979,388.17 2383.429,388.17 C2346.53,388.17 2316.83,366.12 2315.03,299.97 z M2314.58,271.62 C2323.58,223.02 2342.03,194.22 2379.83,194.22 C2417.629,194.22 2440.129,232.02 2441.479,271.62 z M2715.929,193.77 C2692.08,176.67 2668.229,165.87 2638.08,165.87 C2596.229,165.87 2563.83,194.22 2563.83,229.32 C2563.83,272.52 2603.429,288.72 2637.629,301.77 C2662.379,311.22 2687.58,319.77 2687.58,351.27 C2687.58,375.57 2668.229,388.17 2645.729,388.17 C2617.379,388.17 2586.33,367.92 2567.429,347.67 L2548.979,374.67 C2575.53,398.52 2611.53,416.52 2647.979,416.52 C2685.33,416.52 2721.33,389.52 2721.33,349.92 C2721.33,302.22 2681.729,286.47 2643.929,272.52 C2625.479,265.77 2597.58,254.07 2597.58,230.67 C2597.58,209.07 2616.479,194.22 2636.729,194.22 C2661.03,194.22 2682.179,207.72 2701.08,221.22 z" fill-opacity="0" stroke="#0E0C0C" stroke-width="15"/>
-          </g>
-          <text transform="matrix(1, 0, 0, 1, 2820.668, 377.222)">
-            <tspan x="-113.405" y="71.463" font-family="LetterGothicStd" font-size="450" kerning="-5" fill="#0E0C0C">&gt;</tspan>
-          </text>
-          <text transform="matrix(1, 0, 0, 1, 538.445, 377.222)">
-            <tspan x="-113.405" y="71.463" font-family="LetterGothicStd" font-size="450" kerning="-5" fill="#0E0C0C">&lt;</tspan>
-          </text> -->
-<!--         </g>
-    </svg> -->
-
     </div>
 	</div>
 
+
 	<div id='content' style=''>
+
+    <svg id='network' style=''></svg>
+    <!-- <svg id='network' width="100%" height="100%" style=''></svg> -->
 		
     <div id='content_text'>
 
       <div id='side_text'>
-        <div id='reg_link'>
-          Register Here
+        <div id=''>
+          <!-- Register Here -->
+          <a href="https://www.eventbrite.com.au/e/openres-tickets-39533834764" target='_blank' id='reg_link'>Register Here</a>
         </div>
 
         <div>
-          4-8pm <br><br>
+<!--           4-8pm <br><br>
           Tuesdays and Thursdays <br><br>
-          21, 23, 28 &amp 30 November
+          21, 23, 28 &amp 30 November -->
+
+          10am-2pm - Mon 20<br>
+          1-5pm - Thu 23<br>
+          1-6pm - Thu 30<br><br>
+
+          November
         </div>
 
         
@@ -268,7 +323,8 @@
       <div>
         <h1>What can participants expect to get out of this event?</h1>
 
-        <p> <b>Participants will learn how to:</b></p>
+
+        <p> <em>With free snacks and beverages to keep us focused</em>, <br><b>participants will learn how to:</b></p>
 
         <ul>
           
@@ -290,16 +346,100 @@
 
         <h1>Who is this event aimed at?</h1>
 
-        This event is aimed at all researchers who would like to learn how to better analyse and communicate their data online. It will be suitable for all researchers - from those who haven’t coded before, to those who are experienced at coding in their specific tools and who would like to learn how to use data to convey a message online.
+
+        This event is aimed at all researchers who would like to learn how to better analyse and communicate their data online. It will be suitable for all researchers - from those who haven't coded before, to those who are experienced at coding in their specific tools and who would like to learn how to use data to convey a message online.
 
         If you are new to programming, please consider attending one of our beginners workshops
+      </div>
+
+
+      <div>
+
+        <h1>What is the format of the event?</h1>
+
+
+        <div style="overflow-x:auto;">
+
+          <table id='schedule'>
+            <col style='width: 25%'>
+            <tr id='sched_head_row'>
+              <th>Session</th>
+              <th>Focus</th>
+              <th>Description</th>
+            </tr>
+
+            <tr>
+              <td>
+                <b>Getting Started</b><br>
+                <em>Starting Week of 30 Oct</em>
+              </td>
+
+              <td>
+                Programming kick-starter
+              </td>
+
+              <td>
+                If you haven't coded before, come to a workshop where you'll learn the craft of programming from scratch
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <b>Day 1</b><br>
+                <em>Mon 20 Nov</em>
+              </td>
+
+              <td>
+                Data wrangling and analysis warm up
+              </td>
+
+              <td>
+                Begin analysing and visualising in a workshop setting.  Introduction to data sets, teams and mentors.
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <b>Day 2</b><br>
+                <em>Thu 23 Nov</em>
+              </td>
+
+              <td>
+                Data Hacking
+              </td>
+
+              <td>
+                Guided and assisted data analysis and visualisation with teams.
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <b>Day 3</b><br>
+                <em>Thu 30 Nov</em>
+              </td>
+
+              <td>
+                Open and Online + Closing
+              </td>
+
+              <td>
+                Learn to get your data, analysis and findings online and open.  Close with presentations and reflections.
+              </td>
+            </tr>
+
+            
+
+          </table>
+        </div>
+
       </div>
 
       </div>
       
     </div>
 
-    <svg id='network' width="100%" height="100%"></svg>
+    
 
 
 
@@ -315,7 +455,7 @@ var col1 = '#00779c';
 var col2 = '#ff6700';
 
 
-d3.select('#content')
+d3.select('#main')
 	.style('background-color', function(){
 		var col = d3.hsl(col2)
 		col.s = 0.95;
@@ -411,6 +551,7 @@ function make_network(){
     .enter().append("path")
     .attr("d", function(d) { return "M" + d.join("L") + "Z"; })
     .attr('stroke', '#999')
+    .attr('stroke-opacity', 1)
     .attr('fill', function(d, i){
 
       var col = d3.hsl(col2)
@@ -419,6 +560,10 @@ function make_network(){
       col.l = 0.8;
 
       col.s -= (Math.random()*0.9);
+
+      var col_range = 12;
+
+      col.h += ((Math.random()*col_range)-(col_range/2))
 
 
       return col;
@@ -444,26 +589,29 @@ function make_network(){
       d3.select(this)
         .attr('stroke-dasharray', 0)
     })
-
-
-
-
-  var site = svg.append("g")
-      .attr("class", "sites")
-    .selectAll("circle")
-    .data(sites)
-    .enter().append("circle")
-    .attr('fill', '#BBB')
-    .attr('stroke', '#999')
-    .attr('stroke-width', 1)
-    .attr("r", site_r)
-    .attr("cx", function(d) { return d[0]; })
-    .attr("cy", function(d) { return d[1]; })
-    .attr('opacity', 0)
     .transition()
-    .duration(300)
-    .delay(function(d, i){return i * 50;})
-    .attr('opacity', 1);
+    .delay(3000)
+    .attr('stroke-opacity', 0)
+
+
+
+
+  // var site = svg.append("g")
+  //     .attr("class", "sites")
+  //   .selectAll("circle")
+  //   .data(sites)
+  //   .enter().append("circle")
+  //   .attr('fill', '#BBB')
+  //   .attr('stroke', '#999')
+  //   .attr('stroke-width', 1)
+  //   .attr("r", site_r)
+  //   .attr("cx", function(d) { return d[0]; })
+  //   .attr("cy", function(d) { return d[1]; })
+  //   .attr('opacity', 0)
+  //   .transition()
+  //   .duration(300)
+  //   .delay(function(d, i){return i * 50;})
+  //   .attr('opacity', 1);
 }
 
 
