@@ -10,7 +10,6 @@ The options are:
 
 As this introductory workshop is designed to be paired with the event *Open Research*, this installation guide will also cover the package dependencies required for the stats and visualisation extension workshop which will be run during the event.
 
-If you are not taking part in the Open Research event, then you can just install base Python as per the instructions below, but only install the Jupyter and Numpy packages (if using miniconda or pip)
 
 
 ## Installing Python with Anaconda
