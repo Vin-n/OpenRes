@@ -11,7 +11,7 @@ This dataset again comes from Transparency International. Bribery is one of the 
 * __incidence-bribes-firms-2013.csv__:
 This data shows, for a selection of countries, the percentage of firms experiencing at least one bribe payment request during 6 transactions dealing with utilities access, permits, licenses, and taxes. The data comes from the World Bank’s Enterprise Surveys (2007-2013).
 * __human-development-index-vs-corruption-perception-index.csv__:
-This dataset contains information on the corruption index (same as above), the Human Development Index (HDI) and total population each year from 1800. (Note that there are many missing data points in this dataset as there is often no data for the earlier years). The HDS is a composite statistic (index) that measures key dimensions of human development:
-  * a long and healthy life (here is the Our World in Data entry on Life Expectancy)
-  * being knowledgeable (here are the Our World in Data entries on Literacy and the Global Rise of Education)
-  * and have a decent standard of living (here is the Our World in Data entry on GDP Growth).
+This dataset contains information on the corruption index (same as above), the Human Development Index (HDI) and total population each year from 1800. (Note that there are many missing data points in this dataset as there is often no data for the earlier years). The HDI is a composite statistic (index) that measures key dimensions of human development:
+  * a long and healthy life (uses data on life expectancy)
+  * being knowledgeable (uses data on literacy and education)
+  * and have a decent standard of living (uses data on GDP)
