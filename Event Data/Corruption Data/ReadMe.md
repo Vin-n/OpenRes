@@ -8,6 +8,5 @@ This dataset comes from Transparency International who survey individuals around
 This dataset comes from Transparency International as well. It shows the percentage of survey respondents in each country who think that political parties are “corrupt or extremely corrupt”.
 * __share-of-people-paying-bribes-2013.csv__:
 This dataset again comes from Transparency International. Bribery is one of the most common forms of corruption. The data shows the share of people who report having paid a bribe to access public services in the 12 months prior to the survey. The data comes from the Global Corruption Barometer. The public services in question are: education, judiciary, medical and health, police, registry and permit services, utilities, tax revenue and/or customs, and land services.
-
-* fdfdf  
-* dfdf
+* __incidence-bribes-firms-2013.csv__:
+This data shows, for a selection of countries, the percentage of firms experiencing at least one bribe payment request during 6 transactions dealing with utilities access, permits, licenses, and taxes. The data comes from the World Bank’s Enterprise Surveys (2007-2013).
