@@ -10,3 +10,8 @@ This dataset comes from Transparency International as well. It shows the percent
 This dataset again comes from Transparency International. Bribery is one of the most common forms of corruption. The data shows the share of people who report having paid a bribe to access public services in the 12 months prior to the survey. The data comes from the Global Corruption Barometer. The public services in question are: education, judiciary, medical and health, police, registry and permit services, utilities, tax revenue and/or customs, and land services.
 * __incidence-bribes-firms-2013.csv__:
 This data shows, for a selection of countries, the percentage of firms experiencing at least one bribe payment request during 6 transactions dealing with utilities access, permits, licenses, and taxes. The data comes from the World Bank’s Enterprise Surveys (2007-2013).
+* __human-development-index-vs-corruption-perception-index.csv__:
+This dataset contains information on the corruption index (same as above), the Human Development Index (HDI) and total population each year from 1800. (Note that there are many missing data points in this dataset as there is often no data for the earlier years). The HDS is a composite statistic (index) that measures key dimensions of human development:
+  * a long and healthy life (here is the Our World in Data entry on Life Expectancy)
+  * being knowledgeable (here are the Our World in Data entries on Literacy and the Global Rise of Education)
+  * and have a decent standard of living (here is the Our World in Data entry on GDP Growth).
