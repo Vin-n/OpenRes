@@ -1,12 +1,28 @@
 This dataset contains the crime statistics in Victoria over 5 years(2012-2016). 
 
-Key
+## Files
 
-### Crimes against the person:
-A10 Homicide and related offences
+CrimebyCategory.csv-
 
-A20 Assault and related offences
+CrimebyCategoryxgender.csv-
 
+CrimebyPlace.csv-
+
+CrimebyPostcode.csv-
+
+Crimebyagexgender.csv-
+
+Crimebyagexgender_2016.csv-
+
+crimebyindigenous.csv-
+
+sexoffenders.csv
+
+victimebygenderxrage.csv-
+
+victimesofsexualoffence.csv-
+
+### Sexual Offences
 A30 Sexual offences
 
 A40 Abduction and related offences
