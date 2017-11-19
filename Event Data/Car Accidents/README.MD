@@ -49,6 +49,7 @@
 		* Scoping out how data you have on what and how you can use it all
 		* Cross referencing, when you choose to do so
 		* Decoding a some of the data, which uses alpha-numeric codes to provide descriptions of accidents and conditions, etc.  The meaning of these codes is provided in the accompanying documentation (See [Data File Descriptions](#data-file-descriptions))
+	* Though the data is quite clean, and much of it is described in quite some detail in the accompanying documentation, beware that there are some columns in the dataset that are not clear or described.  Just ignore them, there's plenty of other data.
 
 
 ## Origin of the Data
