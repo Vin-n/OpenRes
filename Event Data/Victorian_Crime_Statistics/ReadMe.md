@@ -2,25 +2,23 @@ This dataset contains the crime statistics in Victoria over 5 years(2012-2016).
 
 ## Files
 
-CrimebyCategory.csv-
+CrimebyCategoryxgender.csv- Crime numbers by category of crime and gender
 
-CrimebyCategoryxgender.csv-
+CrimebyPlace.csv- Crime numbers based on the place where the crime was committed (res- Residential, com- Community or other)
 
-CrimebyPlace.csv-
+CrimebyPostcode.csv- Crime numbers based on the Postcode.
 
-CrimebyPostcode.csv-
+Crimebyagexgender.csv- Crime numbers based on the age and gender of the offender.
 
-Crimebyagexgender.csv-
+Crimebyagexgender_2016.csv- Crime numbers based on the age, gender and category of the offender for 2016
 
-Crimebyagexgender_2016.csv-
+crimebyindigenous.csv- Crime committed by indigenous and non-indigenous Australians.
 
-crimebyindigenous.csv-
+sexoffenders.csv- Age and sex of sex offenders
 
-sexoffenders.csv
+victimebygenderxrage.csv- Victims of crime by gender and age
 
-victimebygenderxrage.csv-
-
-victimesofsexualoffence.csv-
+victimesofsexualoffence.csv-Age and gender of victims of sexual offence
 
 ### Sexual Offences
 A30 Sexual offences
