@@ -1,9 +1,10 @@
 # Crash Stats in Victoria
 
-[Access and dowload data here on figshare](https://figshare.com/s/4fef11e99fcedba2b9dd)
+
 
 <!-- MarkdownTOC -->
 
+1. [Download](#download)
 1. [Introduction](#introduction)
 1. [Origin of the Data](#origin-of-the-data)
 1. [Some questions to get started with](#some-questions-to-get-started-with)
@@ -20,6 +21,11 @@
 	1. [ACCIDENT_CHAINAGE.csv](#accident_chainagecsv)
 
 <!-- /MarkdownTOC -->
+
+
+## Download
+
+[Access and dowload data here on figshare](https://figshare.com/s/4fef11e99fcedba2b9dd)
 
 
 ## Introduction
