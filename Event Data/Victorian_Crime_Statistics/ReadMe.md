@@ -20,7 +20,11 @@ victimebygenderxrage.csv- Victims of crime by gender and age
 
 victimesofsexualoffence.csv-Age and gender of victims of sexual offence
 
-### Sexual Offences
+### Crimes against the person
+A10 Homicide and related offences
+
+A20 Assault and related offences
+
 A30 Sexual offences
 
 A40 Abduction and related offences
