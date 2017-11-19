@@ -6,6 +6,7 @@
 
 1. [Introduction](#introduction)
 1. [Origin of the Data](#origin-of-the-data)
+1. [Some questions to get started with](#some-questions-to-get-started-with)
 1. [Data File Descriptions](#data-file-descriptions)
 	1. [ACCIDENT.csv](#accidentcsv)
 	1. [ACCIDENT_LOCATION.csv](#accident_locationcsv)
@@ -39,6 +40,7 @@
 * It is a relatively large and rich dataset.
 	* But, as it is made up multiple datasets, the complexity of your analysis depends very much on how deep you go and how many of the individual datasets you choose to cross-reference.
 	* The major challenges will be:
+		* Scoping out how data you have on what and how you can use it all
 		* Cross referencing, when you choose to do so
 		* Decoding a some of the data, which uses alpha-numeric codes to provide descriptions of accidents and conditions, etc.  The meaning of these codes is provided in the accompanying documentation (See [Data File Descriptions](#data-file-descriptions))
 
@@ -53,6 +55,14 @@
 	* Occurred on any road or public place
 	* The accident was reported to the Police
 	* As a result, a person either died within 30 days or suffered personal injury 
+
+
+## Some questions to get started with
+
+* Which gender has more accidents
+* In what way were they involved in the accident
+* How severe were their injuries
+* What kinds of vehicles are most involved in accidents
 
 
 ## Data File Descriptions
